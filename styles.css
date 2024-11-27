@@ -1,0 +1,914 @@
+/* 
+Author: Adam Sapit
+Date: 11/26/2024
+Assignment Title: Recipe
+*/
+
+/* Import Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Variables */
+
+:root{
+    --black: #0d0d0d;
+    --white: #f2f2f2;
+    --sky: #7abfbf;
+    --trsky: rgba(122,191, 191, .5);
+    --orange: #eb5248;
+    --bebas: 'Bebas Neue', sans-serif;
+    --mont: 'Montserrat', sans-serif;
+}
+
+
+/* Global Styles */
+
+body{
+    background-color: var(--trsky);
+}
+
+main{
+    background-color: var(--white);
+    max-width: 414px;
+    
+}
+
+section{
+    max-width: 414px;
+    background-color: var(--white);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#introduction{
+    padding-top: 140px;
+}
+
+h1, h2, h3, nav a, nav span, menu li, #social li, footer, dt{
+    font-family: var(--bebas);
+    font-weight: normal;
+}
+
+footer p{
+    font-family: var(--bebas);
+
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+
+
+nav a, nav span, menu li, #social li, footer{
+    font-size: 20px;
+}
+
+p, dd, li, nav, input, table{
+    font-family: var(--mont);
+    font-size: 16px;
+}
+
+dt{
+    font-weight: 700;
+}
+
+img{
+    max-width: 100%;
+}
+
+nav ul li{
+    text-align: center;
+}
+
+
+
+main{
+    position: relative;
+    top: 0px;
+    margin: auto;
+    width: 100%;
+
+}
+
+.searchbar{
+    position: relative;
+    top: -2820px;
+    left: 15%;
+    display: block;
+    margin: auto;
+}
+
+.searchbar input{
+    border: 2px solid var(--orange);
+    height: 39px;
+    font-size: 15px;
+    width: 240px;
+}
+
+.searchbar button{
+    position: relative;
+    top: 13px;
+    left: -5px;
+    background-color: var(--orange);
+    border: none;
+
+}
+
+.searchbar button svg{
+    stroke: white;
+}
+
+menu{
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+
+
+
+
+menu li{
+    
+    width: 24%;
+    display: inline-block;
+
+}
+
+.menuItem span, .menuItem svg{
+    transition: background-color .5s, stroke .5s, color .5s;
+
+}
+
+.menuItem span:hover, .menuItem svg:hover{
+    background-color: var(--orange);
+    stroke: white;
+    color: white;
+}
+
+
+.menuItem span{
+    display: block;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+.menuItem a{
+    text-decoration: none;
+    color: var(--orange);
+}
+
+#description p{
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 1.5rem;
+    padding-bottom: 3px;
+    padding-top: 10px;
+}
+
+br{
+    margin-bottom: 10px;
+}
+
+#instructions h2{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+table{
+    line-height: 1.5rem;
+    margin: 10px;
+}
+
+tbody th:first-of-type{
+    text-align: left;
+    font-weight: bold;
+}
+
+.ingredients ul{
+    margin-left: 25px;
+}
+
+.ingredients ul li{
+    list-style-type: square;
+    list-style-position: outside;
+    line-height: 30px;
+    padding-left: 20px;
+}
+
+.directions{
+    padding-bottom: 5px;
+}
+
+.directions ol{
+    margin-left: 10px;
+}
+
+.directions ol li{
+    list-style-type: decimal;
+    line-height: 1.5rem;
+    margin: 20px;
+    padding-left: 20px;
+}
+
+#more{
+    background-color: var(--sky);
+}
+
+#more h2{
+    text-align: center;
+    padding: 15px;
+}
+
+.suggest img{
+    max-width: 75%;
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+
+.content{
+    position: relative;
+    top: 15px;
+    
+}
+
+.suggest{ 
+    padding: 10px;
+}
+
+.rice, .salsa, .tortilla, .guac{
+    display: flex;
+    padding-bottom: 25px;
+    transition: background-color .5s;
+}
+
+.rice:hover, .salsa:hover, .tortilla:hover, .guac:hover{
+    background-color: yellow;
+}
+
+
+
+.content{
+
+    flex-basis: 100%;
+    
+}
+
+.content a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+.content dt{
+    padding-top: 0px;
+    font-size: 1.5rem;
+}
+
+.content dd{
+    padding-top: 15px;
+}
+
+.content p{
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.content svg{
+    padding-top: 10px;
+    position: relative;
+    left: -10px;
+}
+
+.rice svg, .guac svg, .tortilla svg, .salsa svg{
+    fill: var(--orange);
+}
+
+.rice svg:last-of-type, .guac svg:last-of-type, .tortilla svg:last-of-type{
+    fill: white;
+}
+
+
+.sticky{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+#navigation{
+    height: 0;
+
+}
+
+nav {
+    margin: auto;
+    top: -2900px;
+    grid-area: nav;
+    min-width: 414px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px #bbb;
+    position: absolute;
+    min-height: 70px;
+    top: 0;
+    z-index:5;
+    max-width: 414px;
+}
+
+nav span{
+
+    top: 10px;
+}
+
+
+
+
+#logo{
+    position: absolute;
+    top: -20px;
+    left: 115px;
+    stroke: var(--orange);
+}
+
+
+
+nav ul li:last-of-type{
+    position: absolute;
+    top: -30px;
+    left: 320px;
+    
+}
+
+#men{
+    position: relative;
+    top: 10px;
+    color: var(--orange);
+    transition: background-color .5s, color .5s;
+}
+
+#men:hover{
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+
+
+
+#sign-in{
+    color: black;
+}
+
+nav ul li:last-of-type svg{
+    position: relative;
+    top: 15px;
+    stroke: var(--orange);
+
+}
+
+
+
+nav ul li:first-of-type svg{
+    stroke: white;
+    background-color: var(--orange);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+nav ul {
+    grid-area: hamberger;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+}
+nav li img {
+    display: none;
+}
+nav li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color:var(--orange);
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    position: relative;
+    bottom: 5px;
+    left: 30px;
+}
+nav span {
+    display: block;
+    position: relative;
+ }
+nav label svg {
+    display: block;
+}
+label span:before, label span:after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 630px;
+    transition: all 0.5s ease-in-out;
+}
+nav input:not(checked) ~ ul {
+    max-height: 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+}
+
+#social{
+    margin-top: 20px;
+    background-color: white;
+    max-width: 414px;
+}
+
+
+#social h2{
+    display: none;
+}
+
+.socials ul{
+    text-align: center;
+}
+
+.socials ul li{
+    display: inline-block;
+    
+}
+
+.socials .menuItem{
+    margin: 20px;
+}
+
+
+
+.copyright{
+    max-width: 414px;
+    margin: auto;
+    width: 100%;
+    background-color: white;
+}
+
+.copyright p{
+    margin: auto;
+    text-align: center;
+
+}
+
+
+.copyright img{
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    padding: 15px;
+}
+
+
+
+/* Medium */
+@media screen and (min-width: 768px){
+
+main{
+    max-width: 768px; 
+}
+
+section{
+    max-width: 768px;
+}
+
+nav {
+    position: relative;
+    top: -50px;
+    margin: auto;
+
+    min-width: 768px;
+    min-height: 205px;
+    max-width: 768px;
+}
+
+#sign-in{
+    position: relative;
+    top:10px;
+}
+
+.searchbar{
+    position: relative;
+    top: -3240px;
+    left: 45%;
+    display: block;
+    margin: auto;
+    z-index: 100;
+
+}
+
+#search{
+    position: fixed;
+    top: 10px;
+}
+
+label{
+    visibility: hidden;
+}
+
+nav ul li:last-of-type{
+    position: absolute;
+    top: -50px;
+    left: 640px;
+    
+}
+
+
+#logo{
+    
+    left: -45px;
+    top: -85px;
+}
+
+#logo svg{
+    padding:10px;
+}
+
+#introduction{
+    padding-top: 200px;
+}
+
+
+#introduction h1{
+    text-align: left;
+    padding-left: 15px;
+    margin-bottom: -85px;
+}
+
+menu{
+    position: relative;
+    top: 103px;
+    background-color: rgb(255,255,255,0.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    backdrop-filter: blur(1px);
+}
+
+nav ul > li{
+    display: inline-block;
+    height: 250px;
+}
+
+nav{
+    height: 180px;
+    padding-top: 50px;
+}
+
+nav li img {
+    visibility: visible;
+    display:block;
+    
+
+}
+
+nav li{
+    display: inline-block;
+    position: relative;
+    top: 40px;
+    width: 75px;
+
+}
+
+nav li a{
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+nav ul{
+    position: relative;
+    top: -61px;
+    padding-top: 0px;
+    text-align: center;
+    display: flex;
+    gap: 30px;
+    height: 230px;
+
+}
+
+#men{
+    position:relative;
+    left: -70px;
+    top: 15px;
+    z-index: 500;
+
+}
+
+
+
+.suggest{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+table{
+    margin:auto;
+}
+
+.disp{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+#copyright, .socials{
+    background-color: white;
+}
+
+nav input:checked ~ ul {
+    max-height: 630px;
+
+}
+nav input:not(checked) ~ ul {
+    max-height: 630px;
+
+}
+
+#social{
+    position: relative;
+    top: 110px;
+    left: 170px;
+}
+
+.socials ul{
+    text-align: center;
+}
+
+.socials ul li{
+    display: inline-block;
+    
+}
+
+.socials .menuItem{
+    margin: 20px;
+}
+
+footer{
+    position: relative;
+    top: -125px;
+
+}
+
+.copyright{
+
+    margin-left: 50px;
+    width: 50%;
+    background-color: white;
+
+    padding-top: 50px;
+}
+
+.copyright p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    left: -80px;
+    padding-bottom: 25px;
+}
+
+
+.copyright img{
+
+    margin-top: 50px;
+    display: block;
+    margin: 0;
+    max-width: 50%;
+    text-align: left;
+    padding: 15px;
+}
+
+/* Large */
+@media screen and (min-width: 1280px){
+    main{
+        max-width: 1280px; 
+    }
+    
+    section{
+        max-width: 1280px;
+    }
+    
+    nav {
+        position: relative;
+        top: -50px;
+        margin: auto;
+        min-width: 1280px;
+        min-height: 80px;
+        max-width: 1280px;
+    }
+
+    #sign-in{
+        position: relative;
+        top:10px;
+        left: 500px;
+    }
+    
+    .searchbar{
+        position: sticky;
+        top: 50px;
+
+        display: block;
+
+        z-index: 100;
+    
+    }
+
+    nav ul > li{
+        display: inline-block;
+        height: 250px;
+    }
+    
+    nav{
+        height: 120px;
+
+    }
+    
+    nav li img {
+        visibility: visible;
+        display:block;
+        
+    
+    }
+    
+    nav li{
+        display: inline-block;
+        position: relative;
+        top: 0px;
+        width: 75px;
+    
+    }
+    
+    nav li a{
+        width: 100%;
+        text-align: center;
+        margin: 20px;
+    }
+    
+    nav ul{
+        position: relative;
+        top: -105px;
+        padding-top: 0px;
+        text-align: center;
+        display: flex;
+        gap: 30px;
+        height: 200px;
+        left: 0px;
+    }
+
+    #logo{
+        position: relative;
+        top: 20px;
+        left: -25px;
+        z-index: 500;
+    }
+
+    #men{
+        position: relative;
+        left: 110px;
+    }
+
+    #sign-in{
+        position: relative;
+        top: 60px;
+    }
+    
+    .searchbar{
+        position: relative;
+        top: -2820px;
+        left: 15%;
+        display: block;
+        margin: auto;
+    }
+
+    .searchbar{
+        position: initial;
+    }
+
+    #search{
+        position: relative;
+        top: -2775px;
+        left: 500px;
+        z-index: 505;
+        margin: auto;
+    }
+
+    #introduction h1{
+        font-size: 40px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    menu{
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Print */
+@media print{
+    body{
+        margin: 0.5in;
+        font-family: serif;
+    }
+    nav{
+        display: none;
+    }
+}
+}
