@@ -114,6 +114,8 @@ h1{
     font-size: 40px;
     text-align: center;
     margin-top: 30px;
+    position: relative;
+    top: -75px;
 }
 
 h2{
@@ -424,7 +426,7 @@ nav ul li:last-of-type{
 
 
 
-#sign-in{
+.sign-in{
     color: black;
 }
 
@@ -574,7 +576,7 @@ nav {
     max-width: 768px;
 }
 
-#sign-in{
+.sign-in{
     position: relative;
     top:10px;
 }
@@ -622,9 +624,11 @@ nav ul li:last-of-type{
 
 
 #introduction h1{
+    position: initial;
     text-align: left;
     padding-left: 15px;
     margin-bottom: -85px;
+    
 }
 
 menu{
@@ -678,7 +682,7 @@ nav ul{
 
 }
 
-#men{
+.men{
     position:relative;
     left: -70px;
     top: 15px;
@@ -788,7 +792,7 @@ footer{
         max-width: 1280px;
     }
 
-    #sign-in{
+    .sign-in{
         position: relative;
         top:10px;
         left: 500px;
@@ -867,12 +871,12 @@ footer{
         padding: 32px;
     }
 
-    #men{
+    .men{
         position: relative;
-        left: 110px;
+        left: 120px;
     }
 
-    #sign-in{
+    .sign-in{
         position: relative;
         top: 60px;
     }
@@ -884,13 +888,14 @@ footer{
 
     #search{
         position: relative;
-        top: -2020px;
+        top: -1940px;
         left: 500px;
         z-index: 4;
         margin: auto;
     }
 
     #introduction h1{
+        position: initial;
         font-size: 40px;
         text-align: center;
         margin-left: auto;
