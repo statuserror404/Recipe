@@ -96,6 +96,10 @@ section{
     padding-top: 140px;
 }
 
+#description h2, #navigation h2, #copyright h2{
+    visibility: hidden;
+}
+
 h1, h2, h3, nav a, nav span, menu li, #social li, footer, dt{
     font-family: var(--bebas);
     font-weight: normal;
@@ -404,14 +408,15 @@ nav ul li:last-of-type{
     
 }
 
-#men{
+.men{
     position: relative;
+    left: -68px;
     top: 10px;
     color: var(--orange);
     transition: background-color .5s, color .5s;
 }
 
-#men:hover{
+.men:hover{
     color: var(--white);
     background-color: var(--orange);
 }
@@ -624,7 +629,7 @@ nav ul li:last-of-type{
 
 menu{
     position: relative;
-    top: 103px;
+    top: 130px;
     background-color: rgb(255,255,255,0.5);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -816,6 +821,16 @@ footer{
     
     }
     
+    
+    menu span{
+        width: 10%;
+        position: relative;
+        left: 289px;
+
+    }
+
+
+
     nav li{
         display: inline-block;
         position: relative;
@@ -843,9 +858,13 @@ footer{
 
     #logo{
         position: relative;
-        top: 20px;
-        left: -25px;
+        top: 0px;
+        left: -40px;
         z-index: 500;
+    }
+
+    #logo svg{
+        padding: 32px;
     }
 
     #men{
@@ -988,22 +1007,4 @@ footer{
 
 
 
-
-
-
-
-
-
-
-
-/* Print */
-@media print{
-    body{
-        margin: 0.5in;
-        font-family: serif;
-    }
-    nav{
-        display: none;
-    }
-}
 }
