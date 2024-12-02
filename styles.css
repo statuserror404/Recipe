@@ -859,22 +859,15 @@ footer{
     }
     
     .searchbar{
-        position: relative;
-        top: -2820px;
-        left: 15%;
-        display: block;
-        margin: auto;
-    }
-
-    .searchbar{
         position: initial;
+
     }
 
     #search{
         position: relative;
-        top: -2775px;
+        top: -1900px;
         left: 500px;
-        z-index: 505;
+        z-index: 4;
         margin: auto;
     }
 
@@ -886,9 +879,111 @@ footer{
     }
 
     menu{
+        display: block;
         
+        background-color: white;
+        width: 50%;
+        height: 730px;
     }
 
+
+    menu li{
+        display: grid;
+        position: relative;
+        right: 250px;
+        padding-top: 20px;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    #description{
+        max-height: 300px;
+
+    }
+
+    #description p{
+        position: relative;
+        top: -1450px;
+        left: 675px;
+        width: 45%;
+        line-height: 2.5rem;
+    }
+
+   
+
+    #description img{
+        position: relative;
+        left: 140px;
+        top: -666px;
+        width: 40%;
+    }
+    
+    .details table, .details h2{
+        background-color: var(--black);
+        color: var(--sky);
+        width: 100%;
+    }
+    
+    #instructions{
+        position: relative;
+        top: -200px;
+        max-height: 320px;
+    }
+
+    .details{
+        
+        background-color: var(--black);
+        padding-bottom: 20px;
+    }
+
+    .details table tbody{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .details table tr *{
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .suggest{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .salsa, .guac, .tortilla, .rice{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .content, .image{
+        position: relative;
+        left: 27px;
+    }
+    
+    .content{
+        padding: 10px 20px;
+    }
+
+    .socials{
+        position: relative;
+        left: 240px;
+    }
+
+    .copyright{
+        display: inline;
+    }
+
+    .copyright img{
+        width: 20%;
+    }
+    
+    .copyright p{
+        position: relative;
+        top: -230px;
+        left: -285px;
+    }
 }
 
 
